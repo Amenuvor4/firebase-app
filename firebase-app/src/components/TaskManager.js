@@ -7,7 +7,7 @@ import {
     getDocs,
     deleteDoc,
     doc,
-    onSnapShot
+    onSnapshot
 } from 'firebase/firestore';
 
 
