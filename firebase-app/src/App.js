@@ -15,14 +15,25 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>🚀 Firebase React App</h1>
+     <div>
       {user ? (
-        <>
-          <p>Welcome, {user.email}!</p>
-          <button onClick={() => auth.signOut()}>Logout</button>
+        <div className="p-5 min-h-screen bg-gray-50">
+          {/* p-5 = padding: 1.25rem (20px) */}
+          {/* min-h-screen = full height */}
+          {/* bg-gray-50 = light gray background */}
+          
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">🚀 Firebase React App</h1>
+          <p className="text-gray-600 mb-4">Welcome, {user.email}!</p>
+          
+          <button 
+            onClick={() => auth.signOut()}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg mb-6 transition-colors"
+          >
+            Logout
+          </button>
+          
           <TaskManager />
-        </>
+        </div>
       ) : (
         <AuthForm />
       )}
